@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dadosFragment">
+
+    <fragment
+        android:id="@+id/dadosFragment"
+        android:name="com.example.navigationprojects.DadosFragment"
+        android:label="fragment_dados"
+        tools:layout="@layout/fragment_dados" >
+        <action
+            android:id="@+id/action_dadosFragment_to_calcFragment"
+            app:destination="@id/calcFragment" />
+        <action
+            android:id="@+id/action_dadosFragment_to_IMCFragment"
+            app:destination="@id/IMCFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/calcFragment"
+        android:name="com.example.navigationprojects.CalcFragment"
+        android:label="fragment_calc"
+        tools:layout="@layout/fragment_calc" >
+        <action
+            android:id="@+id/action_calcFragment_to_dadosFragment"
+            app:destination="@id/dadosFragment" />
+        <action
+            android:id="@+id/action_calcFragment_to_IMCFragment"
+            app:destination="@id/IMCFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/IMCFragment"
+        android:name="com.example.navigationprojects.IMCFragment"
+        android:label="fragment_i_m_c"
+        tools:layout="@layout/fragment_i_m_c" >
+        <action
+            android:id="@+id/action_IMCFragment_to_calcFragment"
+            app:destination="@id/calcFragment" />
+        <action
+            android:id="@+id/action_IMCFragment_to_dadosFragment"
+            app:destination="@id/dadosFragment" />
+    </fragment>
+</navigation>
